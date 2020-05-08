@@ -25,6 +25,7 @@ public class PokemonResource {
         try {
             pokemon = restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon/" + name.toLowerCase(), Pokemon.class);
             LOGGER.info("Pokemon received successfully");
+            LOGGER.info(pokemon.toString());
         } catch(Exception e ) {
             LOGGER.error("An error has ocurred: " + e.getMessage());
         }
