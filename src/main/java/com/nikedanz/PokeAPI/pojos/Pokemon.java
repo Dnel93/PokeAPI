@@ -1,17 +1,26 @@
 package com.nikedanz.PokeAPI.pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.stereotype.Component;
+import com.hazelcast.nio.ObjectDataInput;
+import com.hazelcast.nio.ObjectDataOutput;
+import com.hazelcast.nio.serialization.DataSerializable;
 
+import java.io.IOException;
 import java.util.List;
 
-@Component
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Pokemon {
+public class Pokemon implements DataSerializable {
     private int id;
     private String name;
     private Sprites sprites;
     private List<Types> types;
+
+    public Pokemon() {
+    }
+
+    public Pokemon(String name) {
+        this.name = name;
+    }
 
     public int getId() {
         return id;
@@ -53,5 +62,21 @@ public class Pokemon {
                 ", sprites=" + sprites +
                 ", types=" + types +
                 '}';
+    }
+
+    @Override
+    public void writeData(ObjectDataOutput out) throws IOException {
+        out.writeInt(id);
+        out.writeObject(name);
+        out.writeObject(sprites);
+        out.writeObject(types);
+    }
+
+    @Override
+    public void readData(ObjectDataInput in) throws IOException {
+        id = in.readInt();
+        name = in.readObject();
+        sprites = in.readObject();
+        types = in.readObject();
     }
 }
