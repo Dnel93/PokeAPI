@@ -1,9 +1,11 @@
 package com.nikedanz.PokeAPI.pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
     private int id;
