@@ -25,7 +25,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
     @ExceptionHandler({InternalError.class, RuntimeException.class, IOException.class})
     public ResponseEntity<Object> handle500(InternalError ie, WebRequest wr) {
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", "An error has ocurred");
+        body.put("message", "An error has occurred");
 
         return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
     }

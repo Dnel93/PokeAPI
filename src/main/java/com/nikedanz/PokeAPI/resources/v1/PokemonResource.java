@@ -44,6 +44,7 @@ public class PokemonResource {
 
         return ResponseEntity
                 .ok()
+                .header(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "http://localhost:3000")
                 .body(pokemon);
     }
 }
