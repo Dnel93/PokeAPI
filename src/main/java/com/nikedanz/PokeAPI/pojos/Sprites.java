@@ -4,31 +4,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hazelcast.nio.ObjectDataInput;
 import com.hazelcast.nio.ObjectDataOutput;
 import com.hazelcast.nio.serialization.DataSerializable;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sprites implements DataSerializable{
-    private String back_default;
-    private String front_default;
+    @Getter @Setter private String back_default;
+    @Getter @Setter private String front_default;
 
     public Sprites() {
-    }
-
-    public String getBack_default() {
-        return back_default;
-    }
-
-    public void setBack_default(String back_default) {
-        this.back_default = back_default;
-    }
-
-    public String getFront_default() {
-        return front_default;
-    }
-
-    public void setFront_default(String front_default) {
-        this.front_default = front_default;
     }
 
     @Override

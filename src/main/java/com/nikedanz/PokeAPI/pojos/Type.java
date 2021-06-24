@@ -4,22 +4,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hazelcast.nio.ObjectDataInput;
 import com.hazelcast.nio.ObjectDataOutput;
 import com.hazelcast.nio.serialization.DataSerializable;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Type implements DataSerializable{
-    private String name;
+    @Getter @Setter private String name;
 
     public Type() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
