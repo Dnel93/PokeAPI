@@ -15,8 +15,8 @@ PokeAPI contains only one method for now, these are the details:
 |:------------------ |:-------------- |:--------------- |:----------------------------------- |
 | GET                | /v1/Pokemon/   | {Pokemon Name}  | localhost:5000/v1/Pokemon/Charizard   |
 
-___Response Example___
-```
+___JSON Response Example___
+```json
 {
     "id": 6,
     "name": "charizard",
