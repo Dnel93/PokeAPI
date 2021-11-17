@@ -6,10 +6,10 @@ You can start the service following the next steps:
 1. Access root location of the project
 2. Execute: `./gradlew bootrun`
 
-__Note:__ By default the service initiate with `port 5000` root path as usual will be: `localhost`
+__Note:__ By default the service initiate with `port 8080` root path as usual will be: `localhost`
 
 ## Methods avilable
-PokeAPI contains only one method for now, these are the details:
+PokeAPI contains only one method for now, these are the details :
 
 | Method Type        | Path           | Parameters      | Example                             |
 |:------------------ |:-------------- |:--------------- |:----------------------------------- |
